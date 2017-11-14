@@ -1,0 +1,14 @@
+{
+	"appName":"Vorflugcheck",
+    "cfgName":"Vorflugcheck Einstellungen",
+    "audio":"Audio",
+    "switch":"Switch",
+    "data":"data-de.jsn", 
+	"qu_full_check":"Vollständige Vorflugkontrolle?",
+	"qu_full_check_label":"Start vollständige Vorflugkontrolle",
+	"qu_full_check_descr":"Nein = teilweise Ja = vollständig",
+	"option_full_check":"V",
+	"option_partial_check":"T",
+	"preflightCheckCtrl":"Vorflugkontrolle Ctrl 01",
+	"preflightSw":"C01"
+}

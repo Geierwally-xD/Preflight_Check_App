@@ -1,0 +1,14 @@
+{
+    "appName":"Preflight Check",
+    "cfgName":"Preflight Check Settings",
+    "audio":"Audio",
+    "switch":"Switch",
+    "data":"data-en.jsn", 
+	"qu_full_check":"Full Preflight Check?",
+	"qu_full_check_label":"Start full preflight check",
+	"qu_full_check_descr":"No = partial Yes = full",
+	"option_full_check":"F",
+	"option_partial_check":"P",
+	"preflightCheckCtrl":"Preflight Check Ctrl 01",
+	"preflightSw":"C01"
+}

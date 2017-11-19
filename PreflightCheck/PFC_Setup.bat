@@ -59,8 +59,6 @@ md Preflight
 endlocal
 XCOPY /S apps\Preflight %transmitter%:\apps\Preflight
 copy apps\Preflight.lc %transmitter%:\apps
-copy audio\de\P_*.wav %transmitter%:\audio\de
-copy audio\en\P_*.wav %transmitter%:\audio\en
 
 @echo ================================
 @echo installation successful finished

@@ -43,6 +43,7 @@
 -- # 		  1. new behavior to avoid storage lack on 16 and 14 transmitters 
 -- # 		  2. control 1 implemented , active if all checks were done 
 -- #          3. additional audio message preflight check finished
+-- # V1.2.5 - Folderhirarchy for audiofiles moved into apps folder
 -- #############################################################################
 
 --Configuration
@@ -102,4 +103,4 @@ end
  
 --------------------------------------------------------------------
 
-return { init=init, loop=loop, author="JETI model", version="1.2.4",name="Preflight Check"}
+return { init=init, loop=loop, author="JETI model", version="1.2.5",name="Preflight Check"}

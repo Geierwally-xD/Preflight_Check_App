@@ -63,14 +63,15 @@ local lastSwitchValue=true
 local fullCheck=false -- modified by Geierwally: if value is true, a full preflight check is executed (done each 12 hours)
 local currentTime=0	  -- modified by Geierwally: time stamp for calculation 12 hour full check time
 local prevRow=0		  -- modified by Geierwally: previous row for detection new checkbox is selected  (play corresponding audio file of check slice)
-local audioListIndex={}	  -- modified by Geierwally: contains corresponding index to audio files list 	
+local audioListIndex={}	  -- modified by Geierwally: contains corresponding index to audio files list 
+local lng = nil	
  
 --------------------------------------------------------------------
 -- Configure language settings
 --------------------------------------------------------------------
 local function setLanguage()
   -- Set language
-  local lng=system.getLocale();
+  lng=system.getLocale();
   local file = io.readall("Apps/Preflight/lang/"..lng.."/locale.jsn")
   local obj = json.decode(file)  
   if(obj) then
@@ -179,8 +180,8 @@ local function keyPressed(key)
     if(key==KEY_1) then
       -- file playback
 	  if(cfgAudio==1) then
-	    --print("Preflightcheck start")
-		system.playFile("P_PlBack.wav",AUDIO_IMMEDIATE)
+	    --print("Apps/Preflight/Audio/"..lng.."/P_PlBack.wav")
+		system.playFile("/Apps/Preflight/Audio/"..lng.."/P_PlBack.wav",AUDIO_QUEUE)
 	  end	
     elseif(key==KEY_5 or key==KEY_ESC) then
       form.preventDefault()
@@ -210,8 +211,8 @@ local function clickedCallback(value)
 	end
 	system.setControl(1,1,0,0) -- set control preflight check finished
 	if(cfgAudio==1) then
-		--print("Preflightcheck finished")
-		system.playFile("P_Finish.wav",AUDIO_QUEUE)
+		--print("Apps/Preflight/Audio/"..lng.."/P_Finish.wav")
+		system.playFile("/Apps/Preflight/Audio/"..lng.."/P_Finish.wav",AUDIO_QUEUE)
 	end	
     form.close()
   end
@@ -291,7 +292,7 @@ local function keyPressedPrefl(key)
   if(row ~= prevRow)then
     if(cfgAudio==1)then
 	  --print(optionAudios[audioListIndex[row]]) 
-	  system.playFile(optionAudios[audioListIndex[row]],AUDIO_QUEUE)
+	  system.playFile("/Apps/Preflight/Audio/"..lng.."/"..optionAudios[audioListIndex[row]].." ",AUDIO_QUEUE)
 	end  
     prevRow = row 
   end
@@ -367,9 +368,9 @@ local function loop()
       -- modified by Geierwally: play audio file of first preflight check after initialization
 			if(cfgAudio==1)then
 				--print("Preflightcheck start")
-				system.playFile("P_PlBack.wav",AUDIO_QUEUE)
+				system.playFile("/Apps/Preflight/Audio/"..lng.."/P_PlBack.wav",AUDIO_QUEUE)
 				--print(optionAudios[audioListIndex[1]]) 
-				system.playFile(optionAudios[audioListIndex[1]],AUDIO_QUEUE)
+				system.playFile("/Apps/Preflight/Audio/"..lng.."/"..optionAudios[audioListIndex[1]].." ",AUDIO_QUEUE)
 			end  
 			prevRow = 1 
 		end

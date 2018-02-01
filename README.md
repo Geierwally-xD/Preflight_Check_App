@@ -1,6 +1,8 @@
 # Preflight_Check_App
 Geierwally's preflight check App for Jeti 14,16 and 24 - transmitters with optional audio output and full \ partial configurable preflight checks.
+
 ![Display-picture](https://raw.githubusercontent.com/Geierwally-xD/Preflight_Check_App/master/img/PFC.jpg)
+
 Pls. read pdf files in doku folder before installation and install the App over PFC_Setup.bat or App Manager on your transmitter.
 On Installation over App Manager you can download the full installation package including user documentation and lua source scripts here:
 https://github.com/Geierwally-xD/Preflight_Check_App

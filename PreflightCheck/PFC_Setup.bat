@@ -1,4 +1,4 @@
-@REM Installation of Preflight Check  App V1.2.4 on Jeti Transmitters
+@REM Installation of Preflight Check App special version V1.3.5 on Jeti Transmitters
 @echo off
 @echo ================================
 @echo connection  transmitter

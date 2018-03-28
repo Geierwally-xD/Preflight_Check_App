@@ -43,6 +43,8 @@
 -- # 		  1. new behavior to avoid storage lack on 16 and 14 transmitters 
 -- # 		  2. control 1 implemented , active if all checks were done 
 -- #          3. additional audio message preflight check finished
+-- # V1.2.5 - Folderhirarchy for audiofiles moved into apps folder
+-- # V1.3.5 - special version lock yes no option box on partial check  
 -- #############################################################################
 
 --Configuration
@@ -59,7 +61,7 @@ local selectboxes={}
 local checkboxes={}
 local currentForm=0
 local MAX_ITEMS = 20
-local lastSwitchValue=true
+local lastSwitchValue=false
 local fullCheck=false -- modified by Geierwally: if value is true, a full preflight check is executed (done each 12 hours)
 local currentTime=0	  -- modified by Geierwally: time stamp for calculation 12 hour full check time
 local prevRow=0		  -- modified by Geierwally: previous row for detection new checkbox is selected  (play corresponding audio file of check slice)

@@ -44,6 +44,7 @@
 -- # 		  2. control 1 implemented , active if all checks were done 
 -- #          3. additional audio message preflight check finished
 -- # V1.2.5 - Folderhirarchy for audiofiles moved into apps folder
+-- # V1.3.5 - special version lock yes no option box on partial check  
 -- #############################################################################
 
 --Configuration
@@ -103,4 +104,4 @@ end
  
 --------------------------------------------------------------------
 
-return { init=init, loop=loop, author="JETI model", version="1.2.5",name="Preflight Check"}
+return { init=init, loop=loop, author="JETI model", version="1.3.5",name="Preflight Check"}

@@ -49,6 +49,7 @@ rd %transmitter%:\apps\Preflight /S /Q && md %transmitter%:\apps\Preflight
 del %transmitter%:\audio\de\P_*.*
 del %transmitter%:\audio\en\P_*.*
 del %transmitter%:\apps\Preflight.*
+del %transmitter%:\apps\PreflAudio.*
 del %transmitter%:\audio\P_*.*
 @echo ================================
 @echo copy new files to transmitter please wait
@@ -59,7 +60,7 @@ cd apps
 md Preflight
 endlocal
 XCOPY /S apps\Preflight %transmitter%:\apps\Preflight
-copy apps\Preflight.lc %transmitter%:\apps
+copy apps\PreflAudio.lc %transmitter%:\apps
 
 @echo ================================
 @echo installation successful finished

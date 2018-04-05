@@ -74,7 +74,7 @@ local lng = nil
 local function setLanguage()
   -- Set language
   lng=system.getLocale();
-  local file = io.readall("Apps/Preflight/lang/"..lng.."/locale.jsn")
+  local file = io.readall("Apps/PreflAudio/lang/"..lng.."/locale.jsn")
   local obj = json.decode(file)  
   if(obj) then
     lang = obj
@@ -182,8 +182,8 @@ local function keyPressed(key)
     if(key==KEY_1) then
       -- file playback
 	  if(cfgAudio==1) then
-	    --print("Apps/Preflight/Audio/"..lng.."/P_PlBack.wav")
-		system.playFile("/Apps/Preflight/Audio/"..lng.."/P_PlBack.wav",AUDIO_QUEUE)
+	    --print("Apps/PreflAudio/Audio/"..lng.."/P_PlBack.wav")
+		system.playFile("/Apps/PreflAudio/Audio/"..lng.."/P_PlBack.wav",AUDIO_QUEUE)
 	  end	
     elseif(key==KEY_5 or key==KEY_ESC) then
       form.preventDefault()
@@ -213,8 +213,8 @@ local function clickedCallback(value)
 	end
 	system.setControl(1,1,0,0) -- set control preflight check finished
 	if(cfgAudio==1) then
-		--print("Apps/Preflight/Audio/"..lng.."/P_Finish.wav")
-		system.playFile("/Apps/Preflight/Audio/"..lng.."/P_Finish.wav",AUDIO_QUEUE)
+		--print("Apps/PreflAudio/Audio/"..lng.."/P_Finish.wav")
+		system.playFile("/Apps/PreflAudio/Audio/"..lng.."/P_Finish.wav",AUDIO_QUEUE)
 	end	
     form.close()
   end
@@ -294,7 +294,7 @@ local function keyPressedPrefl(key)
   if(row ~= prevRow)then
     if(cfgAudio==1)then
 	  --print(optionAudios[audioListIndex[row]]) 
-	  system.playFile("/Apps/Preflight/Audio/"..lng.."/"..optionAudios[audioListIndex[row]].." ",AUDIO_QUEUE)
+	  system.playFile("/Apps/PreflAudio/Audio/"..lng.."/"..optionAudios[audioListIndex[row]].." ",AUDIO_QUEUE)
 	end  
     prevRow = row 
   end
@@ -307,7 +307,7 @@ end
 local function init(code) 
   -- Load data
   local lng=system.getLocale();
-  local file = io.readall("Apps/Preflight/lang/"..lng.."/data.jsn")
+  local file = io.readall("Apps/PreflAudio/lang/"..lng.."/data.jsn")
   system.registerControl(1,lang.preflightCheckCtrl,lang.preflightSw)
   -- modified by Geierwally separate from data file options , 
   --                        corresponding audio files and conditions for 
@@ -370,9 +370,9 @@ local function loop()
       -- modified by Geierwally: play audio file of first preflight check after initialization
 			if(cfgAudio==1)then
 				--print("Preflightcheck start")
-				system.playFile("/Apps/Preflight/Audio/"..lng.."/P_PlBack.wav",AUDIO_QUEUE)
+				system.playFile("/Apps/PreflAudio/Audio/"..lng.."/P_PlBack.wav",AUDIO_QUEUE)
 				--print(optionAudios[audioListIndex[1]]) 
-				system.playFile("/Apps/Preflight/Audio/"..lng.."/"..optionAudios[audioListIndex[1]].." ",AUDIO_QUEUE)
+				system.playFile("/Apps/PreflAudio/Audio/"..lng.."/"..optionAudios[audioListIndex[1]].." ",AUDIO_QUEUE)
 			end  
 			prevRow = 1 
 		end

@@ -45,7 +45,8 @@ XCOPY /S %transmitter%:\Model %backupFolder%\Model
 
 :INSTAL
 @echo delete old files on transmitter please wait
-rd %transmitter%:\apps\Preflight /S /Q && md %transmitter%:\apps\Preflight
+rd %transmitter%:\apps\Preflight /S /Q && md %transmitter%:\apps\PreflAudio
+rd %transmitter%:\apps\PreflAudio /S /Q && md %transmitter%:\apps\PreflAudio
 del %transmitter%:\audio\de\P_*.*
 del %transmitter%:\audio\en\P_*.*
 del %transmitter%:\apps\Preflight.*
@@ -59,7 +60,7 @@ setlocal
 cd apps
 md Preflight
 endlocal
-XCOPY /S apps\Preflight %transmitter%:\apps\Preflight
+XCOPY /S apps\PreflAudio %transmitter%:\apps\PreflAudio
 copy apps\PreflAudio.lc %transmitter%:\apps
 
 @echo ================================

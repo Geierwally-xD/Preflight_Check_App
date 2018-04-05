@@ -81,7 +81,7 @@ local function loop()
 			if(appLoaded == false)then
 				local memTxt = "max: "..mem.."K act: "..debugmem.."K"
 				print(memTxt)
-				main_lib = require("Preflight/Task/Preflight_Main")
+				main_lib = require("PreflAudio/Task/Preflight_Main")
 				if(main_lib ~= nil)then
 					appLoaded = true
 					init(0)
